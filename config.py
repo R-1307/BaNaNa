@@ -1,0 +1,5 @@
+bot_token = '5447167820:AAFJuMm9pRhlJn4Wd3cX7skHNNWRZhBdTZY'
+
+chatid = [-662434625]
+
+call = [93410172, 211812183]
