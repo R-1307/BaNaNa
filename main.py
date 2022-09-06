@@ -5,7 +5,7 @@ bot = telebot.TeleBot('5447167820:AAFJuMm9pRhlJn4Wd3cX7skHNNWRZhBdTZY')
 
 @bot.message_handler()
 def get_user_text(message):
-    if message.text == "Ганж" or message.text == "Коля" or message.text == "ганж":
+    if message.text == "Ганж" or message.text == "Коля" or message.text == "ганж" or message.text == "Ганж)":
         bot.send_message(message.chat.id, "Г а н ж П и д о р")
     if message.text == "Доброе утро" or message.text == "Доброе утро!" or message.text == "доброе утро":
         bot.send_message(message.chat.id, "Х У Ю Т Р О!")
