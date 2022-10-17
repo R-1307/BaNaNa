@@ -1,24 +1,29 @@
 import telebot
-
+import re
 bot = telebot.TeleBot('5447167820:AAFJuMm9pRhlJn4Wd3cX7skHNNWRZhBdTZY')
 
 
 @bot.message_handler()
 def get_user_text(message):
-    if message.text == "Ганж" or message.text == "Коля" or message.text == "ганж" or message.text == "Ганж)":
+    if re.search(r'\bганж\b', message.text.lower()):
         bot.send_message(message.chat.id, "Г а н ж П и д о р")
-    if message.text == "Доброе утро" or message.text == "Доброе утро!" or message.text == "доброе утро":
+    if re.search(r'\bутро\b', message.text.lower()):
         bot.send_message(message.chat.id, "Х У Ю Т Р О!")
         bot.send_message(message.chat.id, "Держи банан!")
         bot.send_message(message.chat.id, '\U0001F34C')
-    if message.text == "держи банан" or message.text == "Держи банан" or message.text == "Держи Банан" or message.text == "Держи банан!" or message.text == "держи банан)":
+        bot.send_message(message.chat.id, "псина")
+    if re.search(r'\bбанан\b', message.text.lower()):
           bot.send_message(message.chat.id, '\U0001F34C')
-    if message.text == message.text == "BANANA!":
+    if re.search(r'\bbanana\b', message.text.lower()):
         bot.send_message(message.chat.id, 'BANANA!!!!')
         bot.send_message(message.chat.id, '\U0001F34C')
         bot.send_message(message.chat.id, '\U0001F34C')
         bot.send_message(message.chat.id, '\U0001F34C')
     if message.text == '\U0001F34C':
         bot.send_message(message.chat.id, '\U0001F34C')
+    if message.from_user.id in [241957427,-1001009232144,-1001633241826,-1001335343936,-1001013523094,-1001509508777]:
+        voice = open('/home/helldude/banana/fart3.ogg', 'rb')
+        bot.send_voice(message.chat.id, voice)
 
 bot.polling(none_stop=True)
+
